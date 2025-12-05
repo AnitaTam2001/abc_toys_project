@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us - ABC Toys{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <h1 class="display-4 fw-bold text-center">About ABC Toys Group</h1>
+        <p class="lead text-center">Bringing Joy and Learning to Children Since 1998</p>
+    </div>
+</div>
+
+<!-- Our Story -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="mb-4">Our Story</h2>
+                <p class="lead">Founded in 1998 by educators and child development specialists, ABC Toys Group began with a simple mission: to create toys that are not only fun but also contribute to a child's growth and development.</p>
+                <p>Over the past {{ stats.years_in_business }} years, we've grown from a small workshop to an international brand, but our commitment to quality and educational value remains unchanged.</p>
+                <p>Every toy we create undergoes rigorous testing for safety, durability, and educational value. We work closely with child psychologists and educators to ensure our products meet the highest standards.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="https://via.placeholder.com/500x350/4a90e2/ffffff?text=Our+Story" 
+                     class="img-fluid rounded shadow" alt="Our Story">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <div class="display-4 fw-bold text-primary">{{ stats.years_in_business }}+</div>
+                <p class="text-muted">Years of Experience</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="display-4 fw-bold text-primary">{{ stats.products_sold|floatformat:0 }}+</div>
+                <p class="text-muted">Toys Sold</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="display-4 fw-bold text-primary">{{ stats.happy_customers|floatformat:0 }}+</div>
+                <p class="text-muted">Happy Families</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="display-4 fw-bold text-primary">{{ stats.countones }}</div>
+                <p class="text-muted">Countries Worldwide</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Values -->
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col text-center">
+                <h2>Our Mission & Values</h2>
+                <p class="text-muted">What drives us every day</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4 class="mb-3">Cognitive Development</h4>
+                        <p>Our toys are designed to stimulate critical thinking, problem-solving skills, and creativity in children.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="mb-3">Safety First</h4>
+                        <p>All materials are non-toxic and safety-tested. We exceed international safety standards for children's products.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4 class="mb-3">Sustainability</h4>
+                        <p>We're committed to eco-friendly practices, using sustainable materials and minimizing our environmental impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col text-center">
+                <h2>Meet Our Leadership</h2>
+                <p class="text-muted">The passionate team behind ABC Toys</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card border-0">
+                    <img src="https://via.placeholder.com/300x300/4a90e2/ffffff?text=Sarah+Johnson" 
+                         class="card-img-top rounded-circle w-50 mx-auto mt-4" alt="Sarah Johnson">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sarah Johnson</h5>
+                        <p class="text-muted">CEO & Founder</p>
+                        <p class="card-text">Former educator with 20+ years experience in child development.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card border-0">
+                    <img src="https://via.placeholder.com/300x300/4a90e2/ffffff?text=Michael+Chen" 
+                         class="card-img-top rounded-circle w-50 mx-auto mt-4" alt="Michael Chen">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Michael Chen</h5>
+                        <p class="text-muted">Head of Product Design</p>
+                        <p class="card-text">Toy designer with a passion for creating educational experiences.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card border-0">
+                    <img src="https://via.placeholder.com/300x300/4a90e2/ffffff?text=Maria+Garcia" 
+                         class="card-img-top rounded-circle w-50 mx-auto mt-4" alt="Maria Garcia">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Maria Garcia</h5>
+                        <p class="text-muted">Quality Assurance Director</p>
+                        <p class="card-text">Ensures every toy meets our strict safety and quality standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 text-center">
+    <div class="container">
+        <h2 class="mb-4">Join Our Growing Family</h2>
+        <p class="lead mb-4">Discover why thousands of parents trust ABC Toys for their children's playtime.</p>
+        <a href="{% url 'products' %}" class="btn btn-primary btn-lg me-2">
+            <i class="fas fa-shopping-cart"></i> Shop Our Collection
+        </a>
+        <a href="{% url 'contact' %}" class="btn btn-outline-primary btn-lg">
+            <i class="fas fa-envelope"></i> Get In Touch
+        </a>
+    </div>
+</section>
+{% endblock %}
