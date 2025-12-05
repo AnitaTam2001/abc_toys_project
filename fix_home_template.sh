@@ -1,3 +1,12 @@
+#!/bin/bash
+
+echo "Fixing home.html template..."
+
+# Backup the original file
+cp templates/home.html templates/home.html.backup 2>/dev/null || true
+
+# Create the corrected home.html
+cat > templates/home.html << 'EOF'
 {% extends 'base.html' %}
 
 {% block title %}ABC Toys - Home{% endblock %}
@@ -121,62 +130,37 @@
         </div>
         
         <div class="row">
-            <!-- Fixed: Using specific categories with proper URLs -->
+            <!-- Fixed: Hardcoded categories with correct slugs -->
             <div class="col-md-4 mb-4">
-                <div class="category-card p-4 text-center rounded shadow-sm">
+                <div class="category-card p-4 text-center rounded">
                     <div class="mb-3">
                         <i class="fas fa-graduation-cap fa-3x text-primary"></i>
                     </div>
                     <h5>Educational Toys</h5>
-                    <p class="text-muted small mb-3">Learning through play</p>
-                    <a href="{% url 'category_products' 'educational-toys' %}" class="btn btn-outline-primary btn-sm">Browse</a>
+                    <a href="{% url 'category_products' 'educational-toys' %}" class="stretched-link"></a>
                 </div>
             </div>
             
             <div class="col-md-4 mb-4">
-                <div class="category-card p-4 text-center rounded shadow-sm">
+                <div class="category-card p-4 text-center rounded">
                     <div class="mb-3">
                         <i class="fas fa-paint-brush fa-3x text-warning"></i>
                     </div>
                     <h5>Creative Arts</h5>
-                    <p class="text-muted small mb-3">Unleash creativity</p>
-                    <a href="{% url 'category_products' 'creative-arts' %}" class="btn btn-outline-warning btn-sm">Explore</a>
+                    <a href="{% url 'category_products' 'creative-arts' %}" class="stretched-link"></a>
                 </div>
             </div>
             
             <div class="col-md-4 mb-4">
-                <div class="category-card p-4 text-center rounded shadow-sm">
+                <div class="category-card p-4 text-center rounded">
                     <div class="mb-3">
                         <i class="fas fa-bicycle fa-3x text-success"></i>
                     </div>
                     <h5>Outdoor Active</h5>
-                    <p class="text-muted small mb-3">Active play & adventure</p>
-                    <a href="{% url 'category_products' 'outdoor-active' %}" class="btn btn-outline-success btn-sm">Discover</a>
+                    <a href="{% url 'category_products' 'outdoor-active' %}" class="stretched-link"></a>
                 </div>
             </div>
         </div>
-        
-        <!-- Or if you want to use dynamic categories from database -->
-        {% comment %}
-        <div class="row">
-            {% for category in categories %}
-            <div class="col-md-4 mb-4">
-                <div class="category-card p-4 text-center rounded shadow-sm">
-                    <div class="mb-3">
-                        <i class="{{ category.icon }} fa-3x text-primary"></i>
-                    </div>
-                    <h5>{{ category.name }}</h5>
-                    <p class="text-muted small mb-3">{{ category.description|truncatechars:60 }}</p>
-                    <a href="{% url 'category_products' category.slug %}" class="btn btn-outline-primary btn-sm">Browse</a>
-                </div>
-            </div>
-            {% empty %}
-            <div class="col-12">
-                <p class="text-muted">Categories coming soon!</p>
-            </div>
-            {% endfor %}
-        </div>
-        {% endcomment %}
     </div>
 </section>
 
@@ -195,17 +179,17 @@
 </section>
 
 <style>
-    /* Add some custom styles for the category cards */
     .category-card {
-        transition: transform 0.3s, box-shadow 0.3s;
-        border: 1px solid #e9ecef;
-        height: 100%;
+        transition: transform 0.3s;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
     
     .category-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-        border-color: #4a90e2;
+        transform: translateY(-10px);
     }
 </style>
 {% endblock %}
+EOF
+
+echo "Home template fixed successfully!"
